@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game_On.Models;
+using Game_On.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,10 @@ namespace Game_On.Views
     /// </summary>
     public partial class PopupChoixDep : Window
     {
-        public PopupChoixDep()
+        public PopupChoixDep(Utilisateur user)
         {
             InitializeComponent();
+            this.DataContext = new PopupChoixDpartemntVM(user);
         }
     }
 }

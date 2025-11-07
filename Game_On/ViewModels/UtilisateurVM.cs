@@ -48,43 +48,5 @@ namespace Game_On.ViewModels
 
         [ObservableProperty]
         DateTime _dateDeDeconnexion;
-
-        [RelayCommand]
-        public async Task Inscription()
-        {
-            Utilisateur utilisateur = new Utilisateur();
-            Departement departement = new Departement();
-            Entreprise entreprise = new Entreprise();
-
-            entreprise.NomEntreprise = "Hourglass Unlimited";
-            departement.NomDepartement = "Gestionnaires de projet";
-
-            utilisateur.NomUtilisateur = NomUtilisateur;
-            utilisateur.PrenomUtilisateur = PrenomUtilisateur;
-            utilisateur.Entreprise = entreprise;
-            utilisateur.Departement = departement;
-            utilisateur.LoginTime = DateTime.Now;
-            utilisateur.Email = Email;
-            utilisateur.MotDePasse = MotDePasse;
-            utilisateur.Pseudo = Pseudo;
-
-
-
-            try
-            {
-                await context.Utilisateur.AddAsync(utilisateur);
-                await context.SaveChangesAsync();
-                utilisateurs.Add(utilisateur);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Erreur EF : {ex.Message}");
-                if (ex.InnerException != null)
-                    Debug.WriteLine($"Détail SQL : {ex.InnerException.Message}");
-            }
-
-            NomUtilisateur = String.Empty;
-            PrenomUtilisateur = String.Empty;
-        }
     }
 }

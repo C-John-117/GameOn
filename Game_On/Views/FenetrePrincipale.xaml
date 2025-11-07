@@ -8,16 +8,17 @@
         Title="FenetrePrincipale" Height="450" Width="800">
 
     <DockPanel>
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+        <StackPanel x:Name="barregestion" Orientation="Horizontal" DockPanel.Dock="Top" Visibility="Visible">
 
             <Button x:Name="btn_Admin" Content="Administration" Height="40" Width="100" Margin="90,0,0,0"/>
-            <Button x:Name="btn_deconnexion" Content="Deconnexion" Height="40" Width="100" Margin="400,0,0,0"/>
+            <Button  Content="Deconnexion" Height="40"  Width="100" Margin="400,0,0,0" Click="Button_Click"/>
 
         </StackPanel>
         
         <Grid>
             <local:PageConnexion x:Name="Connexion" Visibility="Visible"/>
             <local:PageInscription x:Name="Inscription" Visibility="Collapsed"/>
+            <local:FenetreJeu x:Name="Jeu" Visibility="Collapsed"/>
         </Grid>
     </DockPanel>
 </Window>

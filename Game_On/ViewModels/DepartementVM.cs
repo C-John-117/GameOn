@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using Game_On.Data.Context;
 using Game_On.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -40,6 +41,28 @@ namespace Game_On.ViewModels
             }
 
             NomDepartement = string.Empty;
+        }
+
+
+        [RelayCommand]
+        public async Task RecupererDepartements()
+        {
+            try
+            {
+
+                var departementsEnBd = await context.Departement.AsNoTracking().ToListAsync();
+                departements.Clear();
+                foreach (Departement dep in departementsEnBd)
+                {
+                    departements.Add(dep);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Erreur EF : {ex.Message}");
+                if (ex.InnerException != null)
+                    Debug.WriteLine($"Détail SQL : {ex.InnerException.Message}");
+            }
         }
     }
 }

@@ -20,11 +20,16 @@ namespace Game_On.Views
     /// </summary>
     public partial class FenetrePrincipale : Window
     {
+        ConnexionVM connexion = new ConnexionVM();
        
         public FenetrePrincipale()
         {
             InitializeComponent();
-            Inscription.DataContext = new UtilisateurVM();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if
         }
     }
 }

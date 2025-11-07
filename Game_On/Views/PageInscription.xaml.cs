@@ -1,4 +1,5 @@
-﻿using Game_On.ViewModels;
+﻿using Game_On.Models;
+using Game_On.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,8 +47,30 @@ namespace Game_On.Views
 
         private void btn_inscription_Click(object sender, RoutedEventArgs e)
         {
-            //PopupChoixDep popupChoixDep = new PopupChoixDep();
-            //popupChoixDep.ShowDialog();
+            if (this.nom.Text == String.Empty || this.prenom.Text == String.Empty || this.password.Password == String.Empty)
+            {
+                MessageBox.Show("Veuillez entrer toutes les informations", "Information manquante", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            Utilisateur utilisateur = new Utilisateur();
+
+            utilisateur.PrenomUtilisateur = this.prenom.Text;
+            utilisateur.NomUtilisateur = this.prenom.Text;
+            utilisateur.MotDePasse = this.password.Password;
+            utilisateur.Email = this.Email.Text;
+            utilisateur.Pseudo = this.pseudo.Text;
+
+            FenetrePrincipale? fenetre = Window.GetWindow(this) as FenetrePrincipale;
+            this.Visibility = Visibility.Collapsed;
+            PopupChoixDep popupChoixDep = new PopupChoixDep(utilisateur);
+
+            this.nom.Text = String.Empty;
+            this.prenom.Text = String.Empty;
+            this.password.Password = String.Empty;
+
+            popupChoixDep.ShowDialog();
         }
     }
 }

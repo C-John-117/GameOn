@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Game_On.Views"
              xmlns:viewmodel="clr-namespace:Game_On.ViewModels"
-             d:DataContext="{d:DesignInstance Type=viewmodel:UtilisateurVM}"
+            d:DataContext="{d:DesignInstance Type=viewmodel:UtilisateurVM}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="AliceBlue">
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Margin="10" Content="Nom: " FontSize="15" />
-            <TextBox Grid.Column="1" Width="175" Margin="10" Text="{Binding NomUtilisateur}"/>
+            <TextBox x:Name="nom" Grid.Column="1" Width="175" Margin="10" Text="{Binding NomUtilisateur}"/>
 
         </Grid>
 
@@ -38,7 +38,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Margin="10" Content="Prenom: " FontSize="15" />
-            <TextBox Grid.Column="1" Width="175" Margin="10" Text="{Binding PrenomUtilisateur}"/>
+            <TextBox x:Name="prenom" Grid.Column="1" Width="175" Margin="10" Text="{Binding PrenomUtilisateur}"/>
 
         </Grid>
 
@@ -50,7 +50,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Margin="10" Content="Email: " FontSize="15" />
-            <TextBox Grid.Column="1" Width="175" Margin="10" Text="{Binding Email}" />
+            <TextBox x:Name="Email" Grid.Column="1" Width="175" Margin="10" Text="{Binding Email}" />
 
         </Grid>
 
@@ -62,7 +62,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Margin="10" Content="Pseudo: " FontSize="15" />
-            <TextBox Grid.Column="1" Width="175" Margin="10" Text="{Binding Pseudo}" />
+            <TextBox x:Name="pseudo" Grid.Column="1" Width="175" Margin="10" Text="{Binding Pseudo}" />
 
         </Grid>
 
@@ -73,7 +73,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Margin="10" Grid.Column="0" Content="Mot de passe: " FontSize="15"/>
-            <PasswordBox Grid.Column="1" Width="175" Margin="10" PasswordChar="*" PasswordChanged="Pwd_PasswordChanged" />
+            <PasswordBox x:Name="password" Grid.Column="1" Width="175" Margin="10" PasswordChanged="Pwd_PasswordChanged" />
         </Grid>
 
         <Grid Grid.Row="5">
@@ -83,7 +83,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Click="btn_retour_Click" Content="Retour" x:Name="btn_retour" Grid.Column="0" Height="30" Margin="10,0"/>
-            <Button Click="btn_inscription_Click" Content="S'inscrire" x:Name="btn_inscription" Grid.Column="1" Height="30" Margin="10,0" Command="{Binding InscriptionCommand}"/>
+            <Button Click="btn_inscription_Click" Content="S'inscrire" x:Name="btn_inscription" Grid.Column="1" Height="30" Margin="10,0"/>
         </Grid>
     </Grid>
 </UserControl>

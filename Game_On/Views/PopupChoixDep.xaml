@@ -4,13 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game_On.Views"
+        xmlns:viewmodel="clr-namespace:Game_On.ViewModels"
+        d:DataContext="{d:DesignInstance Type=viewmodel:PopupChoixDpartemntVM}"
         mc:Ignorable="d"
         Title="PopupChoixDep" Height="150" Width="300" MaxHeight="150" MaxWidth="300">
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 
         <Label HorizontalAlignment="Center" Content="Veuillez choisir votre departement"/>
-        <ComboBox Width="200" Margin="10"  SelectedItem="{Binding De}" />
-        <Button Content="Valider" Width="100"/>
+        <ComboBox Width="200" Margin="10"
+                  DisplayMemberPath="NomDepartement"
+                  SelectedItem="{Binding DepartementSelectionne}" 
+                  ItemsSource="{Binding Departements}" />
+        <Button Content="Valider" Width="100" Command="{Binding InscriptionCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
 
     </StackPanel>
 </Window>

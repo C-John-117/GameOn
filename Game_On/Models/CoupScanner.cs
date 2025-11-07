@@ -1,11 +1,4 @@
-﻿
-
-
-
-
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +9,22 @@ namespace Game_On.Models
     internal class CoupScanner
     {
         private int[][] grille;
-        public CoupScanner(int[][] grille)
+        public CoupScanner(string grillestr)
         {
-            this.grille = grille;
+            if (grillestr == null) throw new ArgumentNullException(nameof(grillestr));
+            if (grillestr.Length != 81) throw new ArgumentException("Expected 81 characters", nameof(grillestr));
+
+            grille = new int[9][];
+            for (int i = 0; i < 9; i++)
+            {
+                grille[i] = new int[9]; // allocate inner arrays
+                for (int j = 0; j < 9; j++)
+                {
+                    char c = grillestr[i * 9 + j];
+                    if (c < '0' || c > '9') throw new FormatException($"Invalid character at pos {i * 9 + j}: '{c}'");
+                    grille[i][j] = c - '0';
+                }
+            }
         }
         public bool isCoupValide(int X, int Y, int coup)
         {
@@ -35,6 +41,10 @@ namespace Game_On.Models
             }
             value = checklinevertical(X, Y, coup);
 
+            if (value == true) 
+            { 
+                grille[X][Y] = coup;
+            }
             return value;
         }
 

@@ -30,10 +30,10 @@ namespace Game_On.Data.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2310197_dev;User=dev-2310197;Password=Zazou2468;",
-                //    ServerVersion.AutoDetect("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2310197_dev;User=dev-2310197;Password=Zazou2468;"));
-                optionsBuilder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2331055_dev;User=dev-2331055;Password=Nnjo2004;",
-                    ServerVersion.AutoDetect("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2331055_dev;User=dev-2331055;Password=Nnjo2004;"));
+                optionsBuilder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2310197_dev;User=dev-2310197;Password=Zazou2468;",
+                    ServerVersion.AutoDetect("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2310197_dev;User=dev-2310197;Password=Zazou2468;"));
+                //optionsBuilder.UseMySql("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2331055_dev;User=dev-2331055;Password=Nnjo2004;",
+                    //ServerVersion.AutoDetect("Server=sql.decinfo-cchic.ca;Port=33306;Database=a25_e80_2331055_dev;User=dev-2331055;Password=Nnjo2004;"));
             }
         }
 

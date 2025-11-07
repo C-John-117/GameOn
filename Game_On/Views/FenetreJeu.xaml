@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Game_On.Views.FenetreJeu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Game_On.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Grille Sudoku dans un Viewbox pour l’adaptation -->
+        <Viewbox Grid.Row="0" Stretch="Uniform" Margin="20">
+            <Grid x:Name="SudokuGrid" />
+        </Viewbox>
+
+        <!-- Barre inférieure avec le bouton -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,20,0,20">
+            <Button x:Name="BtnNote"
+                    Content="✏️ Mode Note"
+                    FontSize="18"
+                    Padding="10 5"
+                    Width="220"
+                    Height="45"
+                    Background="#FFF3AA"
+                    BorderThickness="0"
+                    Click="BtnNote_Click" />
+        </StackPanel>
+    </Grid>
+</UserControl>
