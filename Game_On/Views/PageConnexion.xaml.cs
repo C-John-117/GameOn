@@ -30,6 +30,8 @@ namespace Game_On.Views
                 if (!ConnexionVM.DejaConnecte)
                     return;
 
+                fenetre.tokenUser = ConnexionVM.UtilisateurAuthentifie;
+
                 this.Visibility = Visibility.Collapsed;
                 fenetre.barregestion.Visibility = Visibility.Visible;
                 fenetre.btn_Admin.Visibility = Visibility.Collapsed;

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Game_On.Models;
 using Game_On.ViewModels;
 
 namespace Game_On.Views
@@ -20,8 +21,9 @@ namespace Game_On.Views
     /// </summary>
     public partial class FenetrePrincipale : Window
     {
-        ConnexionVM connexion = new ConnexionVM();
-       
+        ConnexionVM connexionVm = new ConnexionVM();
+        public Utilisateur tokenUser = new Utilisateur();
+
         public FenetrePrincipale()
         {
             InitializeComponent();
@@ -29,7 +31,19 @@ namespace Game_On.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if
+           
+        }
+
+        private async void Button_Deconnexion(object sender, RoutedEventArgs e)
+        {
+            connexionVm.UtilisateurAuthentifie = tokenUser;
+            await connexionVm.DeconnexionCommand.ExecuteAsync(null);
+            Connexion.Visibility = Visibility.Visible;
+            Inscription.Visibility = Visibility.Collapsed;
+            Jeu.Visibility = Visibility.Collapsed;
+            
+
+
         }
     }
 }
