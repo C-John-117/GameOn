@@ -17,9 +17,9 @@
         </StackPanel>
 
         <Grid>
-            <local:PageConnexion x:Name="Connexion" Visibility="Visible"/>
+            <local:PageConnexion x:Name="Connexion" Visibility="Collapsed"/>
             <local:PageInscription x:Name="Inscription" Visibility="Collapsed"/>
-            <local:FenetreJeu x:Name="Jeu" Visibility="Collapsed"/>
+            <local:FenetreJeu x:Name="Jeu" Visibility="Visible"/>
             <local:SelectionJeux x:Name="Selection" Visibility="Collapsed"/>
         </Grid>
     </DockPanel>

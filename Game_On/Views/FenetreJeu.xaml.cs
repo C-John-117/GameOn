@@ -9,6 +9,7 @@ namespace Game_On.Views
 {
     public partial class FenetreJeu : UserControl
     {
+        private string memory;
         private bool noteMode = false;
         private string puzzle;
         private TextBox[,] textBoxes = new TextBox[9, 9];
@@ -19,15 +20,22 @@ namespace Game_On.Views
 
             // Grille de départ (0 = vide)
             puzzle = "007300900030014070000020000078160059005800047002700160750093000280000000001400000";
+            memory = puzzle;
 
             // Instancier le VM avec la grille initiale si non présent
             if (DataContext is not SudokuVM)
                 DataContext = new SudokuVM(puzzle);
 
-            CreateSudokuGrid();
+            CreateSudokuGrid(puzzle);
         }
 
-        private void CreateSudokuGrid()
+        //A implementer lorsque la BD sera connecter
+        public void ChooseDifficulty(string difficulte)
+        {
+            //TODO
+        }
+
+        private void CreateSudokuGrid(string puzzle)
         {
             SudokuGrid.Children.Clear();
             SudokuGrid.RowDefinitions.Clear();
@@ -171,6 +179,11 @@ namespace Game_On.Views
                         : Brushes.White;
                 }
             }
+        }
+
+        private void btn_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            CreateSudokuGrid(memory);
         }
     }
 }

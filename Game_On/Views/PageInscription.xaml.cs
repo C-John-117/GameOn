@@ -64,6 +64,7 @@ namespace Game_On.Views
 
             FenetrePrincipale? fenetre = Window.GetWindow(this) as FenetrePrincipale;
             this.Visibility = Visibility.Collapsed;
+
             PopupChoixDep popupChoixDep = new PopupChoixDep(utilisateur);
 
             this.nom.Text = String.Empty;

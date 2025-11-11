@@ -34,6 +34,8 @@ namespace Game_On.Models
 
         public string MotDePasse { get; set; }
 
+        public TimeSpan TempsDeJeuCumule { get; set; }
+
 
 
 

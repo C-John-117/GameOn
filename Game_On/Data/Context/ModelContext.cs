@@ -123,7 +123,8 @@ namespace Game_On.Data.Context
                     Score = 24,
                     Email = "jean.tremblay@example.com",
                     Pseudo = "jtremblay",
-                    MotDePasse = "Test@1234"
+                    MotDePasse = "Test@1234",
+                    TempsDeJeuCumule = TimeSpan.Zero
                 },
                 new Utilisateur
                 {
@@ -137,7 +138,8 @@ namespace Game_On.Data.Context
                     Score = 18,
                     Email = "marie.gagnon@example.com",
                     Pseudo = "mgagnon",
-                    MotDePasse = "Test@1234"
+                    MotDePasse = "Test@1234",
+                    TempsDeJeuCumule = TimeSpan.Zero
                 },
                 new Utilisateur
                 {
@@ -151,7 +153,8 @@ namespace Game_On.Data.Context
                     Score = 15,
                     Email = "pierre.roy@example.com",
                     Pseudo = "proy",
-                    MotDePasse = "Test@1234"
+                    MotDePasse = "Test@1234",
+                    TempsDeJeuCumule = TimeSpan.Zero
                 }
 
             //new Utilisateur { Id = 4, NomUtilisateur = "Côté", PrenomUtilisateur = "Sophie", EntrepriseId = 1, DepartementId = 2, LoginTime = new DateTime(2025, 10, 28, 8, 0, 0), LogoutTime = new DateTime(2025, 10, 28, 16, 30, 0), Score = 28 },
